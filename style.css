@@ -71,7 +71,10 @@ li:hover a, a:hover {
 
 /* --- HERO BOX --- */
 .box{
-    background: linear-gradient(120deg, #fff8f4 0%, #f6e1df 58%, #e9c4c1 100%);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #302326;
     height: 95vh;
     width: 100%;
     margin-top: 10vh;
@@ -79,6 +82,20 @@ li:hover a, a:hover {
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
+}
+.box-video{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+.box-overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255,248,244,.94) 0%, rgba(255,248,244,.78) 42%, rgba(48,35,38,.18) 100%);
+    z-index: -1;
 }
 .left{
     height: auto;
@@ -392,11 +409,14 @@ footer a:hover {
     color: #fff8f4;
 }
 .co-1>a{
-    color: #fdf0edz;
+    color: #fdf0ed;
 }
 .co-2{
     background-color: #fff8f4;
     box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+.co .co-1 p a{
+    color: #fff8f4;
 }
 input, textarea{
     width: 100%;
